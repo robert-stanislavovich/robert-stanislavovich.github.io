@@ -1,0 +1,59 @@
+:root {
+  --bg: #121315;
+  --panel: #1c1e21;
+  --text: #f2f2f2;
+  --muted: #a7abb2;
+  --accent: #ff7a1a;
+  --line: #2c2f34;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f6f5f3;
+    --panel: #ffffff;
+    --text: #17181a;
+    --muted: #5d6168;
+    --line: #e2e0dc;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+main { max-width: 880px; margin: 0 auto; padding: 32px 16px 64px; }
+a { color: var(--accent); }
+header.hero { display: flex; gap: 20px; align-items: center; margin-bottom: 28px; }
+header.hero img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+h1 { font-size: 34px; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+h1 span { color: var(--accent); }
+h2 { font-size: 22px; margin: 40px 0 12px; }
+.tagline { color: var(--muted); margin: 6px 0 0; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 20px 0; }
+.shots img { width: 100%; border-radius: 12px; display: block; }
+.badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.badges a {
+  display: inline-block; padding: 10px 18px; border-radius: 12px; background: var(--panel);
+  border: 1px solid var(--line); color: var(--text); text-decoration: none; font-weight: 600;
+}
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 12px 0; }
+.wallet { display: grid; gap: 4px; margin: 14px 0; }
+.wallet b { font-size: 15px; }
+.wallet code {
+  font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px;
+}
+.wallet button {
+  justify-self: start; margin-top: 4px; font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 8px;
+  border: 1px solid var(--line); background: transparent; color: var(--text); cursor: pointer;
+}
+.muted { color: var(--muted); }
+footer { margin-top: 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer a { margin-right: 14px; }
+.lang { float: right; font-size: 14px; }
+@media (max-width: 520px) {
+  header.hero { flex-direction: column; align-items: flex-start; }
+  h1 { font-size: 28px; }
+}
