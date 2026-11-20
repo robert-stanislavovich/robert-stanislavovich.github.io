@@ -1,0 +1,73 @@
+/* Страницы Enduro Radar на GitHub Pages (tools/store-site.ts). Палитра — docs/DESIGN.md «Цвета», шрифты Geologica и Onest. */
+:root {
+  --bg: #E9DFCA; --surface: #FCF8EF; --surface2: #F2EADA; --line: #E4D9C2; --text: #2B241B; --muted: #6F5E43;
+  --olive: #5F6135; --olive-soft: #E6E4C8; --orange: #CC4A10; --shadow: 0 4px 14px rgba(60, 45, 20, .16);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #211C15; --surface: #2B251C; --surface2: #362E23; --line: #43392B; --text: #F3ECDD; --muted: #BBAD90;
+    --olive: #A6A866; --olive-soft: #3B3B22; --orange: #EE6C30; --shadow: 0 4px 14px rgba(0, 0, 0, .45);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #211C15; --surface: #2B251C; --surface2: #362E23; --line: #43392B; --text: #F3ECDD; --muted: #BBAD90;
+  --olive: #A6A866; --olive-soft: #3B3B22; --orange: #EE6C30; --shadow: 0 4px 14px rgba(0, 0, 0, .45);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 Onest, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+a { color: var(--orange); text-underline-offset: 2px; }
+h1, h2, h3, .brand span, .card b { font-family: Geologica, Onest, sans-serif; letter-spacing: -0.01em; }
+h1 { font-size: 34px; line-height: 1.15; font-weight: 800; margin: 0 0 12px; }
+h2 { font-size: 22px; line-height: 1.25; font-weight: 700; margin: 36px 0 10px; }
+h3 { font-size: 18px; margin: 24px 0 8px; }
+p, ul, ol { margin: 0 0 14px; }
+li { margin: 4px 0; }
+li::marker { color: var(--olive); }
+code { font: 0.9em/1.4 ui-monospace, Menlo, monospace; background: var(--surface2); padding: 1px 5px; border-radius: 6px; }
+strong { font-weight: 700; }
+
+header.top { background: var(--surface); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1; }
+header.top .wrap:first-child { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
+.brand img { border-radius: 8px; }
+.brand span { font-size: 19px; font-weight: 800; }
+.lang { font-size: 15px; font-weight: 600; text-decoration: none; padding: 6px 14px; border-radius: 999px; background: var(--surface2); color: var(--text); }
+nav.wrap { display: flex; gap: 6px; overflow-x: auto; padding-top: 8px; padding-bottom: 10px; scrollbar-width: none; }
+nav a { flex: none; font-size: 15px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: 999px; }
+nav a[aria-current="page"] { background: var(--olive); color: #fff; }
+
+main.wrap { padding-top: 32px; padding-bottom: 48px; }
+main.doc { background: var(--surface); border-radius: 28px; box-shadow: var(--shadow); padding: 28px 24px 36px; margin-top: 24px; margin-bottom: 24px; max-width: 828px; }
+main.doc h1 { margin-bottom: 18px; }
+
+.hero { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.hero img { width: 112px; height: 112px; border-radius: 26px; box-shadow: var(--shadow); flex: none; }
+.tagline { color: var(--muted); margin: 0; font-size: 18px; }
+.promo { font-size: 19px; }
+.soon { display: inline-block; background: var(--olive-soft); color: var(--text); border-radius: 999px; padding: 8px 16px; font-weight: 600; font-size: 15px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 20px 0 28px; }
+.card { display: grid; gap: 4px; background: var(--surface); border-radius: 20px; box-shadow: var(--shadow); padding: 16px 18px; text-decoration: none; color: var(--text); min-height: 54px; }
+.card b { font-size: 18px; color: var(--orange); }
+.card span { color: var(--muted); font-size: 15px; }
+
+.table { overflow-x: auto; margin: 0 0 16px; border-radius: 14px; border: 1px solid var(--line); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { background: var(--surface2); font-weight: 700; }
+tr:last-child td { border-bottom: 0; }
+td:first-child { min-width: 180px; }
+
+footer.wrap { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 14px; padding-top: 8px; padding-bottom: 32px; }
+footer span { flex-basis: 100%; }
+
+@media (max-width: 560px) {
+  h1 { font-size: 28px; }
+  .hero { flex-direction: column; align-items: flex-start; }
+  main.doc { border-radius: 20px; padding: 20px 16px 28px; margin-left: 8px; margin-right: 8px; }
+  td:first-child { min-width: 140px; }
+}
