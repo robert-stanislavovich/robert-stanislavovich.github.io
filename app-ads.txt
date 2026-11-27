@@ -495,3 +495,8 @@ yabbi.me, 675d9254-4032-47ed-9074-b6ef4dbab522, DIRECT
 yeahmobi.com, 113772, RESELLER
 zmaticoo.com, 1092406133, DIRECT
 zmaticoo.com, 114490, RESELLER
+
+# Unity Ads / LevelPlay (Unity Monetization → Организация → App-ads.txt), 2026-11-27
+video.unrulymedia.com, 201313863, RESELLER
+media.net, 8CUSC3UJ7, RESELLER
+media.net, 8CUUQ286L, RESELLER
